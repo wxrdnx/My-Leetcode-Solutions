@@ -1,9 +1,7 @@
 class Solution {
 public:
     bool isValidSudoku(vector<vector<char>>& board) {
-        vector<vector<bool>> row(9, vector<bool>(9, false));
-        vector<vector<bool>> col(9, vector<bool>(9, false));
-        vector<vector<bool>> box(9, vector<bool>(9, false));
+        array<array<bool, 9>, 9> row{}, col{}, box{};
         for (auto ri = 0; ri < 9; ri++) {
             for (auto ci = 0; ci < 9; ci++) {
                 if (board[ri][ci] != '.') {
