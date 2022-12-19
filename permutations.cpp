@@ -6,7 +6,7 @@ public:
         return result;
     }
 private:
-    void permute_helper(vector<vector<int>> &result, vector<int> &nums, int now) {
+    void permute_helper(vector<vector<int>>& result, vector<int>& nums, int now) {
 		if (now == nums.size()) {
 		    result.push_back(nums);
 		    return;

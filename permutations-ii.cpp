@@ -7,7 +7,7 @@ public:
         return result;
     }
 private:
-    void permuteUniqueHelper(vector<vector<int>> &result, vector<int> &nums, int now) {
+    void permuteUniqueHelper(vector<vector<int>>& result, vector<int>& nums, int now) {
         if (now == nums.size()) {
             result.push_back(nums);
             return;

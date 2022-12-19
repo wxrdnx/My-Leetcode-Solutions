@@ -23,5 +23,5 @@ public:
     }
 };
 
-// Time: O(n log(k))
+// Time: O(nlog(k))
 // Space: O(n)

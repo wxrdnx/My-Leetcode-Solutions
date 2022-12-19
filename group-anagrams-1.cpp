@@ -15,5 +15,5 @@ public:
     }
 };
 
-// Time: O(nk log(k))
+// Time: O(nklog(k))
 // Space: O(nk)
