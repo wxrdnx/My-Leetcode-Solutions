@@ -1,7 +1,7 @@
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        vector<int> indices(0x100, -1);
+        vector<int> indices(256, -1);
         int longest = 0;
         int left = 0, right = 0;
         while (right < s.length()) {
