@@ -6,8 +6,7 @@ public:
             mapping[c]++;
         }
         int count = t.length();
-        int min_len = numeric_limits<int>::max();
-        int min_i = 0;
+        int min_len = numeric_limits<int>::max(), min_i = 0;
         for (int left = 0, right = 0; right < s.length(); right++) {
             if (mapping[s[right]] > 0) {
                 count--;
@@ -29,6 +28,3 @@ public:
         return min_len != numeric_limits<int>::max() ? s.substr(min_i, min_len) : "";
     }
 };
-
-// Time: O(n)
-// Space: O(1)
