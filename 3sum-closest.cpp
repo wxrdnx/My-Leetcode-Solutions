@@ -1,12 +1,11 @@
 class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
-        int size = nums.size();
         int min_diff = numeric_limits<int>::max();
         int result;
         sort(nums.begin(), nums.end());
-        for (int curr = 0; curr < size - 2; curr++) {  
-            int left = curr + 1, right = size - 1;
+        for (int curr = 0; curr < nums.size() - 2; curr++) {  
+            int left = curr + 1, right = nums.size() - 1;
             while (left < right) {
                 int sum = nums[curr] + nums[left] + nums[right];
                 int diff = abs(sum - target);
