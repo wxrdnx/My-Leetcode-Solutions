@@ -2,7 +2,7 @@ class Solution {
 public:
     bool containsNearbyAlmostDuplicate(vector<int>& nums, int indexDiff, int valueDiff) {
         unordered_map<long, long> seen;
-        for (auto i = 0; i < nums.size(); i++) {
+        for (int i = 0; i < nums.size(); i++) {
             if (i >= indexDiff + 1) {
                 long prevShiftedNum = static_cast<long>(nums[i - indexDiff - 1]) - numeric_limits<int>::min();
                 long prevBucketId = prevShiftedNum / (valueDiff + 1);
