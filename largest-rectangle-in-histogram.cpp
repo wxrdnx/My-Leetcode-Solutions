@@ -11,7 +11,7 @@ public:
                 max_area = max(max_area, (right - left) * stk.top().second);
                 stk.pop();
             }
-            stk.push(make_pair(left, heights[right]));
+            stk.push({left, heights[right]});
             right++;
         }
         while (!stk.empty()) {
