@@ -12,7 +12,7 @@ private:
             result.push_back(nums);
             return;
         }
-        for (auto i = now; i < nums.size(); i++) {
+        for (int i = now; i < nums.size(); i++) {
             if (i == now || nums[i] != nums[now]) {
                 swap(nums[i], nums[now]);
                 permuteUniqueHelper(result, nums, now + 1);
