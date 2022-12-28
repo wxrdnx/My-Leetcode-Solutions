@@ -3,11 +3,11 @@ public:
     vector<vector<string>> solveNQueens(int n) {
         vector<vector<string>> result;
         vector<int> config(n);
-        bf(n, 0, 0, 0, 0, config, result);
+        backtrack(n, 0, 0, 0, 0, config, result);
         return result;
     }
 private:
-    void bf(int n, int row, int &&ng_column, int &&ng_up_right, int &&ng_down_right, vector<int>& config, vector<vector<string>>& result) {
+    void backtrack(int n, int row, int &&ng_column, int &&ng_up_right, int &&ng_down_right, vector<int>& config, vector<vector<string>>& result) {
         if (row == n) {
             vector<string> board;
             string repr(n, '.');
@@ -28,7 +28,7 @@ private:
                 ng_column |= col_bit;
                 ng_up_right |= up_right_bit;
                 ng_down_right |= down_right_bit;
-                bf(n, row + 1, move(ng_column), move(ng_up_right), move(ng_down_right), config, result);
+                backtrack(n, row + 1, move(ng_column), move(ng_up_right), move(ng_down_right), config, result);
                 ng_column &= ~col_bit;
                 ng_up_right &= ~up_right_bit;
                 ng_down_right &= ~down_right_bit;
