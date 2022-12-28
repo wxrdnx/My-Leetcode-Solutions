@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int lengthOfLongestSubstringTwoDistinct(string &s) {
+    int lengthOfLongestSubstringTwoDistinct(string s) {
         vector<int> mapping(256);
         int left = 0, right = 0;
         int result = 0, count = 0;
