@@ -28,3 +28,6 @@ public:
         return min_len != numeric_limits<int>::max() ? s.substr(min_i, min_len) : "";
     }
 };
+
+// Time: O(n)
+// Space: O(1)
