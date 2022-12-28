@@ -13,3 +13,6 @@ public:
         return min(step1, step2);
     }
 };
+
+// Time: O(n)
+// Space: O(1)
