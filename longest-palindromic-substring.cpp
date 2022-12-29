@@ -1,6 +1,33 @@
 class Solution {
 public:
     string longestPalindrome(string s) {
+        int max_len = 0, max_i = 0;
+        for (int i = 0; i < s.size(); i++) {
+            int len = max(expand(s, i, i), expand(s, i - 1, i));
+            if (len > max_len) {
+                max_len = len;
+                max_i = i - (len / 2);
+            }
+        }
+        return s.substr(max_i, max_len);
+    }
+private:
+    int expand(string& s, int left, int right) {
+        while (left >= 0 && right < s.size() && s[left] == s[right]) {
+            left--;
+            right++;
+        }
+        return right - left - 1;
+    }
+};
+
+// Time: O(n^2)
+// Space: O(1)
+
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        /* Manacher's Algorithm */
         string pad = "|";
         for (char& c : s) {
             pad.push_back(c);
