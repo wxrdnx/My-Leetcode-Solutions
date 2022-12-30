@@ -2,7 +2,7 @@ class Solution {
 public:
     string longestPalindrome(string s) {
         int max_len = 0, max_i = 0;
-        for (int i = 0; i < s.size(); i++) {
+        for (int i = 0; i < s.length(); i++) {
             int len = max(expand(s, i, i), expand(s, i - 1, i));
             if (len > max_len) {
                 max_len = len;
@@ -13,7 +13,7 @@ public:
     }
 private:
     int expand(string& s, int left, int right) {
-        while (left >= 0 && right < s.size() && s[left] == s[right]) {
+        while (left >= 0 && right < s.length() && s[left] == s[right]) {
             left--;
             right++;
         }
@@ -33,16 +33,16 @@ public:
             pad.push_back(c);
             pad.push_back('|');
         }
-        vector<int> count(pad.size());
+        vector<int> count(pad.length());
         int max_len = 0, max_i = 0, center = 0, right = 0;
-        for (int i = 0; i < pad.size(); i++) {
+        for (int i = 0; i < pad.length(); i++) {
             if (i < right) {
                 count[i] = min(count[center * 2 - i], right - i);
             }
-            while (i - count[i] >= 0 && i + count[i] < pad.size() && pad[i - count[i]] == pad[i + count[i]]) {
+            while (i >= count[i] && i + count[i] < pad.length() && pad[i - count[i]] == pad[i + count[i]]) {
                 count[i]++;
             }
-            if (i + count[i] > right) {
+            if (i + count[i] >= right) {
                 center = i;
                 right = i + count[i];
             }
