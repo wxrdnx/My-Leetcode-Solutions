@@ -21,3 +21,6 @@ private:
         rotate(nums.begin() + now, nums.begin() + now + 1, nums.end());
     }
 };
+
+// Time: O(n!)
+// Space: O(n)
