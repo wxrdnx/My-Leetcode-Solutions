@@ -37,3 +37,6 @@ public:
         return dummy->next;
     }
 };
+
+// Time: O(nlog(k)), k = number of linked lists, n = number of nodes
+// Space: O(n + k)
