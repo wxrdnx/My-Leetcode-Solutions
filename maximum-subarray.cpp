@@ -2,12 +2,12 @@ class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
         /* Kadane's Algorithm */
-        int max_sum = numeric_limits<int>::min(), curr_sum = 0;
+        int max_so_far = numeric_limits<int>::min(), curr_sum = 0;
         for (auto& num : nums) {
             curr_sum = max(num, curr_sum + num);
-            max_sum = max(max_sum, curr_sum);
+            max_so_far = max(max_so_far, curr_sum);
         }
-        return max_sum;
+        return max_so_far;
     }
 };
 
