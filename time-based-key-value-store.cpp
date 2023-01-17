@@ -1,19 +1,19 @@
 class TimeMap {
-    unordered_map<string, vector<pair<int, string>>> db;
+    unordered_map<string, vector<pair<int, string>>> m_db;
 public:
     TimeMap() {
         
     }
     
     void set(string key, string value, int timestamp) {
-        db[key].push_back({timestamp, value});
+        m_db[key].push_back({timestamp, value});
     }
     
     string get(string key, int timestamp) {
-        auto it = upper_bound(db[key].begin(), db[key].end(), timestamp, [](int t, const auto& p) {
+        auto it = upper_bound(m_db[key].begin(), m_db[key].end(), timestamp, [](int t, const auto& p) {
             return t < p.first;
         });
-        return it != db[key].begin() ? prev(it)->second : "";
+        return it != m_db[key].begin() ? prev(it)->second : "";
     }
 };
 
