@@ -9,13 +9,13 @@ public:
          */
         vector<vector<int>> dp(2, vector<int>(n + 1));
         for (int i = 1; i <= m; i++) {
-            int b = i & 1, nb = b ^ 1;
+            int p = i & 1, q = p ^ 1;
             for (int j = 1; j <= n; j++) {
                 if (matrix[i - 1][j - 1] == '0') {
-                    dp[b][j] = 0;
+                    dp[p][j] = 0;
                 } else {
-                    dp[b][j] = min({dp[b][j - 1], dp[nb][j], dp[nb][j - 1]}) + 1;
-                    max_len = max(max_len, dp[b][j]);
+                    dp[p][j] = min({dp[p][j - 1], dp[q][j], dp[q][j - 1]}) + 1;
+                    max_len = max(max_len, dp[p][j]);
                 }
             }
         }
