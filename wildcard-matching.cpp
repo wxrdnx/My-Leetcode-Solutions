@@ -1,25 +1,30 @@
 class Solution {
 public:
     bool isMatch(string s, string p) {
-        vector<vector<bool>> dp(2, vector<bool>(p.length() + 1, 0));
-        dp[0][0] = true;
+        vector<bool> dp(p.length() + 1);
+        dp[0] = true;
         for (int j = 1; j <= p.length() && p[j - 1] == '*'; j++) {
-            dp[0][j] = true;
+            dp[j] = true;
         }
         for (int i = 1; i <= s.length(); i++) {
-            int curr = i & 1, prev = curr ^ 1;
-            dp[curr][0] = false;
+            int prev = dp[0];
+            dp[0] = false;
             for (int j = 1; j <= p.length(); j++) {
+                int tmp = dp[j];
                 if (p[j - 1] == '*') {
-                    dp[curr][j] = dp[curr][j - 1] || dp[prev][j];
+                    dp[j] = dp[j - 1] || dp[j];
                 } else {
-                    dp[curr][j] = dp[prev][j - 1] && (p[j - 1] == '?' || s[i - 1] == p[j - 1]);
+                    dp[j] = prev && (p[j - 1] == '?' || s[i - 1] == p[j - 1]);
                 }
+                prev = tmp;
             }
         }
-        return dp[s.length() & 1][p.length()];
+        return dp[p.length()];
     }
 };
+
+// Time: O(mn)
+// Space: O(n)
 
 class Solution {
 public:
@@ -45,3 +50,6 @@ public:
         return j > p.length();
     }
 };
+
+// Time: O(mn)
+// Space: O(1)
