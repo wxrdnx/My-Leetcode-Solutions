@@ -23,7 +23,7 @@ public:
     }
 };
 
-// Time: O(mn)
+// Time: O(m * n)
 // Space: O(n)
 
 class Solution {
@@ -51,5 +51,5 @@ public:
     }
 };
 
-// Time: O(mn)
+// Time: O(m * n)
 // Space: O(1)

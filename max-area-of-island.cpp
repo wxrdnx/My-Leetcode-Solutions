@@ -21,5 +21,5 @@ private:
     }
 };
 
-// Time: O(mn)
-// Space: O(mn)
+// Time: O(m * n)
+// Space: O(m * n)
