@@ -4,6 +4,10 @@ public:
         if (s1.length() + s2.length() != s3.length()) {
             return false;
         }
+        /*
+         * dp[0][0] = true
+         * dp[i][j] = (s1[i] == s3[i + j] && dp[i - 1][j]) || (s2[j] == s3[i + j] && dp[i][j - 1])
+         */
         vector<int> dp(s2.length() + 1);
         for (int i = 0; i <= s1.length(); i++) {
             for (int j = 0; j <= s2.length(); j++) {
