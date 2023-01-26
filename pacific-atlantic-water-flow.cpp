@@ -1,5 +1,6 @@
 class Solution {
-    constexpr static int pacific = 1, atlantic = 1 << 1;
+    constexpr static int pacific = 1 << 0, atlantic = 1 << 1;
+    vector<vector<int>> dirs = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 public:
     vector<vector<int>> pacificAtlantic(vector<vector<int>>& heights) {
         vector<vector<int>> result;
@@ -27,12 +28,8 @@ private:
             return;
         }
         visited[i][j] |= ocean;
-        dfs(heights, visited, i + 1, j, ocean, heights[i][j]);
-        dfs(heights, visited, i - 1, j, ocean, heights[i][j]);
-        dfs(heights, visited, i, j + 1, ocean, heights[i][j]);
-        dfs(heights, visited, i, j - 1, ocean, heights[i][j]);    
+        for (auto& dir : dirs) {
+            dfs(heights, visited, i + dir[0], j + dir[1], ocean, heights[i][j]);
+        }
     }
 };
-
-// Time: O(m * n)
-// Space: O(m * n)
