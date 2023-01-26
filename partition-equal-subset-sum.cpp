@@ -1,6 +1,10 @@
 class Solution {
 public:
     bool canPartition(vector<int>& nums) {
+        /*
+         * dp[0][0] = true;
+         * dp[i][j] = dp[i - 1][j] || dp[i - 1][j - nums[i]]
+         */
         int sum = 0;
         bitset<20001> dp;
         dp |= 1;

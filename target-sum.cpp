@@ -3,7 +3,7 @@ public:
     int findTargetSumWays(vector<int>& nums, int target) {
         /*
          *     sum(+) + sum(neg) = target
-         * +)  sum(+) - sum(neg) = sum(nums)
+         *  +) sum(+) - sum(neg) = sum(nums)
          * _________________________________
          *     sum(+) * 2        = target + sum(nums)
          *     sum(+)            = (target + sum(nums)) / 2
