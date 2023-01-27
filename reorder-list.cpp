@@ -38,7 +38,8 @@ public:
         if (!head->next) {
             return;
         }
-        ListNode *dummy = new ListNode(0, head), *slow = dummy, *fast = dummy;
+        ListNode *dummy = new ListNode(0, head);
+        ListNode *slow = dummy, *fast = dummy;
         while (fast && fast->next) {
             fast = fast->next->next;
             slow = slow->next;
