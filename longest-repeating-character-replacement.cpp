@@ -7,7 +7,7 @@ public:
         while (right < s.length()) {
             mapping[s[right]]++;
             max_len = max(max_len, mapping[s[right]]);
-            while (right - left + 1 - max_len > k) {
+            if (right - left + 1 - max_len > k) {
                 mapping[s[left]]--;
                 left++;
             }
