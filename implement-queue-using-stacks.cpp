@@ -38,3 +38,6 @@ public:
  * int param_3 = obj->peek();
  * bool param_4 = obj->empty();
  */
+
+// push: O(1)
+// pop: O(1)
