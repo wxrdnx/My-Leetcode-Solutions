@@ -21,7 +21,7 @@ private:
     }
 };
 
-// Time: O(n^2)
+// Time: O(n ^ 2)
 // Space: O(1)
 
 class Solution {
@@ -56,4 +56,4 @@ public:
 };
 
 // Time: O(n)
-// Space: O(1)
+// Space: O(n)
