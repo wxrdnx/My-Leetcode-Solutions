@@ -24,4 +24,4 @@ public:
 };
 
 // Time: O(n)
-// Space: O(1)
+// Space: O(n)
