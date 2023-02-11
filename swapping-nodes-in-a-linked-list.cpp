@@ -13,7 +13,7 @@ public:
     ListNode* swapNodes(ListNode* head, int k) {
         ListNode *dummy = new ListNode(0, head);
         ListNode *fast = dummy, *slow = dummy;
-        for (int i = 1; i < k; i++) {
+        while (--k) {
             fast = fast->next;
         }
         ListNode *lprev = fast, *lcurr = lprev->next;
