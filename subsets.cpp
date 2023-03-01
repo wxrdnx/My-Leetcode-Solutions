@@ -25,14 +25,14 @@ public:
         return result;
     }
 private:
-    void backtrack(vector<vector<int>>& result, vector<int>& nums, vector<int>&& elements, int curr) {
-        if (curr == nums.size()) {
+    void backtrack(vector<vector<int>>& result, vector<int>& nums, vector<int>&& elements, int pos) {
+        if (pos == nums.size()) {
             result.push_back(elements);
             return;
         }
-        backtrack(result, nums, move(elements), curr + 1);
-        elements.push_back(nums[curr]);
-        backtrack(result, nums, move(elements), curr + 1);
+        backtrack(result, nums, move(elements), pos + 1);
+        elements.push_back(nums[pos]);
+        backtrack(result, nums, move(elements), pos + 1);
         elements.pop_back();
     }
 };

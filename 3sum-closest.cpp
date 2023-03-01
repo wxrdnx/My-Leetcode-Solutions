@@ -4,10 +4,10 @@ public:
         int min_diff = numeric_limits<int>::max();
         int result;
         sort(nums.begin(), nums.end());
-        for (int curr = 0; curr < nums.size() - 2; curr++) {  
-            int left = curr + 1, right = nums.size() - 1;
+        for (int i = 0; i < nums.size() - 2; i++) {  
+            int left = i + 1, right = nums.size() - 1;
             while (left < right) {
-                int sum = nums[curr] + nums[left] + nums[right];
+                int sum = nums[i] + nums[left] + nums[right];
                 int diff = abs(sum - target);
                 if (diff == 0) {
                     return target;
